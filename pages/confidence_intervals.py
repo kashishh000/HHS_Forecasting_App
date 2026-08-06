@@ -4,7 +4,7 @@ Confidence Intervals Page Component for HHS UAC Dashboard.
 
 import streamlit as st
 import pandas as pd
-from utils.data_loader import load_raw_data
+from utils.data_loader import load_data
 from utils.preprocessing import create_engineered_features
 from utils.ml_models import generate_future_forecast, compute_confidence_intervals
 from utils.helpers import render_header, format_number
@@ -16,7 +16,7 @@ def render():
         subtitle="Quantifying Forecast Uncertainty Across Short and Long Operational Horizons"
     )
 
-    df_raw = load_raw_data()
+    df_raw = load_data(
     if df_raw.empty:
         st.error("Data unavailable.")
         return
