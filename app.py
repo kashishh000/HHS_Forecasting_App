@@ -7,18 +7,20 @@ import streamlit as st
 import os
 
 # Import all page modules at top level
-import pages.home as home
-import pages.dataset_explorer as dataset_explorer
-import pages.eda as eda
-import pages.predictive_forecasting as predictive_forecasting
-import pages.future_forecast as future_forecast
-import pages.discharge_forecast as discharge_forecast
-import pages.model_comparison as model_comparison
-import pages.confidence_intervals as confidence_intervals
-import pages.scenario_analysis as scenario_analysis
-import pages.bi_dashboard as bi_dashboard
-import pages.research_summary as research_summary
-import pages.about as about
+import importlib
+
+home = importlib.import_module("pages.home")
+dataset_explorer = importlib.import_module("pages.dataset_explorer")
+eda = importlib.import_module("pages.eda")
+predictive_forecasting = importlib.import_module("pages.predictive_forecasting")
+future_forecast = importlib.import_module("pages.future_forecast")
+discharge_forecast = importlib.import_module("pages.discharge_forecast")
+model_comparison = importlib.import_module("pages.model_comparison")
+confidence_intervals = importlib.import_module("pages.confidence_intervals")
+scenario_analysis = importlib.import_module("pages.scenario_analysis")
+bi_dashboard = importlib.import_module("pages.bi_dashboard")
+research_summary = importlib.import_module("pages.research_summary")
+about = importlib.import_module("pages.about")
 
 # ─── Page Configuration ────────────────────────────────────────────────────────
 st.set_page_config(
